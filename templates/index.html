@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocketIO Client</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+</head>
+
+<body>
+    <h1>SocketIO Client</h1>
+    <script>
+        // Connect to the Flask-SocketIO server
+        const socket = io.connect('https://trusted-currently-bobcat.ngrok-free.app');
+
+        // Event handler for successful connection
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
+
+        // Event handler for receiving messages from server
+        socket.on('message', (data) => {
+            console.log('Message from server:', data);
+        });
+
+        // Example of sending a message to the server
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+            socket.emit('message', message);
+        }
+    </script>
+
+    <!-- Example input and button to send a message -->
+    <input type="text" id="messageInput" placeholder="Enter message">
+    <button onclick="sendMessage()">Send Message</button>
+</body>
+
+</html>
