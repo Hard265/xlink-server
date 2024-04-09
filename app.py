@@ -28,3 +28,5 @@ def index():
 
 if __name__ == '__main__':
     socketio.run(app, debug=True, log_output=False)
+
+#ngrok http --domain=trusted-currently-bobcat.ngrok-free.app 5000
