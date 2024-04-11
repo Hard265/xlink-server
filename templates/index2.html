@@ -11,7 +11,7 @@
     <script>
       const socket = io.connect({
         extraHeaders: {
-          user: "c7znmd1nzwd",
+          user: "24ypnzcuqmy",
         },
       });
 
@@ -41,8 +41,8 @@
         socket.emit("message", {
           id: Math.random().toString(36).substring(2, 15),
           chatId: "chat",
-          sender: "c7znmd1nzwd",
-          receiver: "24ypnzcuqmy",
+          sender: "24ypnzcuqmy",
+          receiver: "c7znmd1nzwd",
           content: message,
           timestamp: new Date().toISOString(),
         });
